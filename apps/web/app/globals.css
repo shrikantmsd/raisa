@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ------------------------------------------------------------------
+   RAISA OFFICE (default) — spec §39: Microsoft 365-familiar, light
+   background, white surfaces, neutral gray canvas, professional blue
+   accents, information-dense.
+------------------------------------------------------------------- */
+:root {
+  --font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  --color-canvas: #f3f2f1;
+  --color-surface: #ffffff;
+  --color-accent: #2564cf;
+  --color-accent-secondary: #e8eefc;
+  --color-ink: #201f1e;
+
+  --font-size-h1: 28px;
+  --font-size-h2: 20px;
+  --font-size-body: 14px;
+
+  --active-tab-bg: var(--color-accent);
+  --active-tab-fg: #ffffff;
+  --active-tab-radius: 4px;
+}
+
+/* ------------------------------------------------------------------
+   RAISA GENX — spec §40. Exact tokens as specified: Urbanist font,
+   H1 46px / H2 22px / body 16px, palette #D7FE03 / #83AF3B / #000000 /
+   #F5F5F8 / #FFFFFF, black rounded pill for the active nav tab.
+------------------------------------------------------------------- */
+html[data-theme="genx"] {
+  --font-family: "Urbanist", system-ui, -apple-system, sans-serif;
+  --color-canvas: #f5f5f8;
+  --color-surface: #ffffff;
+  --color-accent: #d7fe03;
+  --color-accent-secondary: #83af3b;
+  --color-ink: #000000;
+
+  --font-size-h1: 46px;
+  --font-size-h2: 22px;
+  --font-size-body: 16px;
+
+  --active-tab-bg: #000000;
+  --active-tab-fg: #ffffff;
+  --active-tab-radius: 999px; /* pill, per spec */
+}
+
+@font-face {
+  font-family: "Urbanist";
+  src: local("Urbanist");
+  font-display: swap;
+}
+
+body {
+  background-color: var(--color-canvas);
+  color: var(--color-ink);
+  font-family: var(--font-family);
+  font-size: var(--font-size-body);
+}
+
+h1 {
+  font-size: var(--font-size-h1);
+}
+h2 {
+  font-size: var(--font-size-h2);
+}
+
+.nav-tab-active {
+  background-color: var(--active-tab-bg);
+  color: var(--active-tab-fg);
+  border-radius: var(--active-tab-radius);
+}
